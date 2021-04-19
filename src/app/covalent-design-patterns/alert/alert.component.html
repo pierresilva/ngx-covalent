@@ -1,0 +1,177 @@
+<td-layout>
+  <td-layout-nav logo="assets:covalent"
+                 [toolbarTitle]="name">
+    <div td-toolbar-content
+         layout="row"
+         layout-align="start center"
+         flex>
+      <span flex></span>
+      <a mat-icon-button
+         matTooltip="Docs"
+         matTooltipPosition="before"
+         href="https://teradata.github.io/covalent/"
+         target="_blank">
+        <mat-icon>chrome_reader_mode</mat-icon>
+      </a>
+    </div>
+    <div layout-gt-sm="row"
+         tdMediaToggle="gt-xs">
+      <div flex-gt-sm>
+        <mat-card>
+          <mat-card-title>Dialogs</mat-card-title>
+          <mat-card-subtitle>Notification with call to action</mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <button class="text-upper"
+                    mat-raised-button
+                    color="warn"
+                    (click)="openAlert()">Show Error
+            </button>
+            <button class="text-upper"
+                    mat-raised-button
+                    color="accent"
+                    (click)="openConfirm()">Show Confirm
+            </button>
+            <button mat-button
+                    color="accent"
+                    (click)="showPromp()"
+                    class="text-upper">Open Prompt
+            </button>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Toast</mat-card-title>
+          <mat-card-subtitle>Brief, floating notification with optional user interaction</mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <button class="text-upper"
+                    mat-raised-button
+                    color="primary"
+                    (click)="showSnackBar()">Show toast
+            </button>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Inline Errors</mat-card-title>
+          <mat-card-subtitle>For forms and inputs use inline errors for contextual feedback.</mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <form #myForm="ngForm">
+              <div layout-gt-xs="row"
+                   layout-margin>
+                <mat-form-field flex>
+                  <input matInput
+                         #firstNameForm="ngModel"
+                         placeholder="Firstname"
+                         [(ngModel)]="first_name"
+                         name="first_name"
+                         required
+                         tdAutoTrim/>
+                  <mat-hint>
+                    <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required"
+                          class="tc-red-600">Required</span>
+                  </mat-hint>
+                </mat-form-field>
+                <mat-form-field flex>
+                  <input matInput
+                         #lastNameForm="ngModel"
+                         flex
+                         placeholder="Lastname"
+                         [(ngModel)]="last_name"
+                         name="last_name"
+                         required
+                         tdAutoTrim/>
+                  <mat-hint>
+                    <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required"
+                          class="tc-red-600">Required</span>
+                  </mat-hint>
+                </mat-form-field>
+              </div>
+              <div layout-gt-xs="row"
+                   layout-margin>
+                <mat-form-field flex="40">
+                  <input matInput
+                         #addressEl
+                         #addressForm="ngModel"
+                         placeholder="Address"
+                         [(ngModel)]="address"
+                         name="address"
+                         required
+                         maxlength="50"
+                         tdAutoTrim/>
+                  <mat-hint>
+                    <span [hidden]="addressForm.pristine || !addressForm.errors?.required"
+                          class="tc-red-600">Required</span>
+                  </mat-hint>
+                  <mat-hint align="end">0 / 50</mat-hint>
+                </mat-form-field>
+                <mat-form-field flex="35">
+                  <input matInput
+                         placeholder="City"
+                         [(ngModel)]="city"
+                         name="city"
+                         tdAutoTrim/>
+                </mat-form-field>
+              </div>
+              <div layout-gt-xs="row"
+                   layout-margin>
+                <mat-form-field flex="20">
+                  <input matInput
+                         #stateForm="ngModel"
+                         placeholder="State"
+                         [(ngModel)]="state"
+                         name="state"
+                         pattern="[A-Z]{2}"
+                         maxlength="2"
+                         required
+                         tdAutoTrim/>
+                  <mat-hint>
+										<span [hidden]="stateForm.pristine"
+                          class="tc-red-600">
+            <span [hidden]="!stateForm.errors?.required">Required</span>
+										<span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+										</span>
+                  </mat-hint>
+                  <mat-hint align="end">e.g CA</mat-hint>
+                </mat-form-field>
+                <mat-form-field flex="25">
+                  <input matInput
+                         #zipForm="ngModel"
+                         placeholder="Zip"
+                         [(ngModel)]="zip"
+                         name="zip"
+                         pattern="\d{5}"
+                         maxlength="5"
+                         required/>
+                  <mat-hint>
+										<span [hidden]="zipForm.pristine"
+                          class="tc-red-600">
+                    <span [hidden]="!zipForm.errors?.required">Required</span>
+										<span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+										</span>
+                  </mat-hint>
+                  <mat-hint align="end">e.g 92101</mat-hint>
+                </mat-form-field>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="inset">
+                <button mat-raised-button
+                        color="accent"
+                        [disabled]="!myForm.valid"
+                        class="text-upper">Submit Form
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <td-layout-footer>
+      <div layout="row"
+           layout-align="start center">
+        <span class="md-caption">Made with <mat-icon class="text-md">favorite</mat-icon> using <a href="http://getcovalent.com"
+                                                                                                  class="text-nodecoration tc-blue-700">Covalent</a>, built on Angular v5 + Angular Material.</span>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>
+</td-layout>

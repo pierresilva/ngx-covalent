@@ -1,0 +1,29 @@
+{
+  "appId": "com.ngxcovalent",
+  "appName": "NgxCovalent",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "Hostname": "app",
+      "Fullscreen": "false",
+      "DisallowOverscroll": "true",
+      "Orientation": "portrait",
+      "StatusBarOverlaysWebView": "false",
+      "StatusBarStyle": "default",
+      "AutoHideSplashScreen": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "3000",
+      "ShowSplashScreenSpinner": "false",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "500",
+      "SplashShowOnlyFirstTime": "true"
+    }
+  }
+}

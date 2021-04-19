@@ -1,0 +1,91 @@
+<td-layout>
+  <td-layout-nav logo="assets:covalent"
+                 [toolbarTitle]="name">
+    <div td-toolbar-content
+         layout="row"
+         layout-align="start center"
+         flex>
+      <span flex></span>
+      <a mat-icon-button
+         matTooltip="Docs"
+         matTooltipPosition="before"
+         href="https://teradata.github.io/covalent/"
+         target="_blank">
+        <mat-icon>chrome_reader_mode</mat-icon>
+      </a>
+    </div>
+    <div layout-gt-sm="row"
+         class="pad-sm">
+      <mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to filters</mat-card-title>
+        <mat-card-subtitle>use a primary action button to remove the filters</mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column"
+               layout-align="center center"
+               class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar
+                      class="text-super push-bottom">image
+            </mat-icon>
+            <h2>No photos</h2>
+            <h3>There are no photos with your applied filters</h3>
+            <button mat-raised-button
+                    color="accent"
+                    class="text-upper">Remove Filters
+            </button>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+      <mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to no initial content</mat-card-title>
+        <mat-card-subtitle>use a primary and secondary action buttons to add different possible content
+        </mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column"
+               layout-align="center center"
+               class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar
+                      class="text-super push-bottom">chrome_reader_mode
+            </mat-icon>
+            <h2>No blog posts</h2>
+            <h3>You have not created any posts</h3>
+            <button mat-raised-button
+                    color="accent"
+                    class="text-upper">Create Post
+            </button>
+            <button mat-button
+                    class="text-upper push-top">Create Category
+            </button>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+      <mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to no possible data</mat-card-title>
+        <mat-card-subtitle>display an informative message when there is way to add data</mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column"
+               layout-align="center center"
+               class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar
+                      class="text-super push-bottom">receipt
+            </mat-icon>
+            <h2>No logs</h2>
+            <h3>There have been no log entries</h3>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <td-layout-footer>
+      <div layout="row"
+           layout-align="start center">
+        <span class="mat-caption">Made with <mat-icon class="text-md">favorite</mat-icon> using <a href="http://getcovalent.com"
+                                                                                                   class="text-nodecoration tc-blue-700">Covalent</a>, built on Angular v5 + Angular Material.</span>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>
+</td-layout>
