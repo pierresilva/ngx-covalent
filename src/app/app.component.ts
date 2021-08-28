@@ -39,6 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
   ) {
+
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'teradata',
@@ -53,6 +54,11 @@ export class AppComponent implements OnInit, OnDestroy {
       'assets',
       'covalent',
       this._domSanitizer.bypassSecurityTrustResourceUrl('https://teradata.github.io/covalent/v3/assets/icons/covalent.svg')
+    );
+    this._iconRegistry.addSvgIconInNamespace(
+      'assets',
+      'clipsalud-b',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/clipsalud-b.svg')
     );
   }
 

@@ -1,0 +1,64 @@
+<mat-card-header>
+  <mat-card-title>Registrarse como usuario</mat-card-title>
+  <mat-card-subtitle>Completa el formulario para crear una cuenta de usuario</mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+  <mat-form-field appearance="outline">
+    <mat-icon matPrefix
+              required
+              style="margin-right: 14px;">face_ouline
+    </mat-icon>
+    <mat-label>Nombre</mat-label>
+    <mat-hint class="text-danger">Hint</mat-hint>
+    <input matInput
+           type="text">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-icon matPrefix
+              style="margin-right: 14px;">alternate_email
+    </mat-icon>
+    <mat-label>Correo electrónico</mat-label>
+    <mat-hint class="text-danger">Hint</mat-hint>
+    <input matInput
+           type="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-icon matPrefix
+              style="margin-right: 14px;">lock_outline
+    </mat-icon>
+    <mat-label>Clave</mat-label>
+    <mat-hint class="text-danger">Hint</mat-hint>
+    <input matInput
+           type="password">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-icon matPrefix
+              style="margin-right: 14px;">lock_outline
+    </mat-icon>
+    <mat-label>Confirme su clave</mat-label>
+    <mat-hint class="text-danger">Hint</mat-hint>
+    <input matInput
+           type="password">
+  </mat-form-field>
+
+  <div style="margin: 14px;">
+    <a mat-button
+       [routerLink]="'/auth/request-new-password'"
+       style="margin-left: 14px;">Olvidaste tu clave?</a>
+    <a mat-button
+       [routerLink]="'/auth'"
+       style="margin-left: 14px;">Ya tienes cuenta?</a>
+  </div>
+
+  <div style="margin: 14px;">
+    <button mat-flat-button
+            style="width: 100%;"
+            type="submit"
+            color="primary">
+      REGISTRARSE
+    </button>
+  </div>
+</mat-card-content>
